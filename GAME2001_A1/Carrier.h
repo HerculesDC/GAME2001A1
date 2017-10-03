@@ -23,7 +23,7 @@ public:
 	Carrier(string, int);
 	~Carrier() {};
 	bool loadFighter(Fighter*);
-	bool launchNextFighter();
+	Fighter* launchNextFighter();
 	void getInfo(); // in the behaviors section of the assignment outline, this appears as "printInfo()"
 	bool hasFighters();
 	int getCapacity(); // not included in the class model, but described in the "behaviors" section
@@ -51,24 +51,33 @@ bool Carrier::loadFighter(Fighter* f) {
 
 }
 
-bool Carrier::launchNextFighter() {
+Fighter* Carrier::launchNextFighter() {
 	
 	if (numFighters == 0) {
 		cout << "Bays empty! No fighters to launch..." << endl;
-		return false;
+		return nullptr;
 	} else {
-		for (int i = 0; i < numFighters; i++)
+		Fighter * f = bayList[0];
+		for (int i = 0; i < numFighters; i++) // NOT doing an "efficient remove". Shifting all elements one bay forward
 			bayList[i] = bayList[(i + 1)];
 		numFighters--;
-		return true;
+		return f;
 	}
 }
 
 void Carrier::getInfo() {
-	cout << "Carrier's name: " << name << '.' << endl; //still needs implementing the fighter information part
+	cout << "Carrier's name: " << name << '.' << endl; 
+	//the two lines below may be unnecessary
+	cout << "Max load: " << maxBays << '.' << endl;
+	cout << "Current load: " << numFighters << '.' << endl;
+
+	for (int i = 0; i < maxBays; i++)
+		bayList[i]->getInfo();
+
+	return;
 }
 
-bool Carrier::hasFighters() {
+bool Carrier::hasFighters() { // written like this for compactness
 	if (numFighters > 0) return true;
 	else return false;
 }

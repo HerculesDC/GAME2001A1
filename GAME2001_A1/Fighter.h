@@ -25,6 +25,7 @@ public:
 	string getFName();
 	int getStructStrength();
 	void getInfo();
+	int getDamage();
 };
 
 Fighter::Fighter(string n, int d, int s) {
@@ -40,5 +41,9 @@ string Fighter::getFName() { return fName; }
 int Fighter::getStructStrength() { return damage; }
 
 void Fighter::getInfo() {
-	cout << endl;
+	cout << "Fighter Name: " << fName << endl;
+	cout << "Structural Strength: " << structStrength << endl;
+	cout << "Damage: " << damage << endl;
 }
+
+int Fighter::getDamage() { return damage; }

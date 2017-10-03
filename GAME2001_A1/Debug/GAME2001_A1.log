@@ -1,2 +1,5 @@
 ﻿  Main.cpp
-c:\users\hercu\documents\schoolstuff\sem3\ds\game2001_a1\game2001_a1\carrier.h(37): error C4716: 'Carrier::hasFighters': must return a value
+c:\users\hercu\documents\schoolstuff\sem3\ds\game2001a1\game2001_a1\main.cpp(37): warning C4101: 'i2': unreferenced local variable
+c:\users\hercu\documents\schoolstuff\sem3\ds\game2001a1\game2001_a1\main.cpp(37): warning C4101: 'i1': unreferenced local variable
+c:\users\hercu\documents\schoolstuff\sem3\ds\game2001a1\game2001_a1\main.cpp(24): error C4700: uninitialized local variable 'c2' used
+c:\users\hercu\documents\schoolstuff\sem3\ds\game2001a1\game2001_a1\main.cpp(24): error C4700: uninitialized local variable 'c1' used
